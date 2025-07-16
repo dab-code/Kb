@@ -10,7 +10,7 @@ description: 'En beskrivelse'
 
   <div class="image-container">
 
-::image{ src="/images/1.jpg" alt="Hero image" width="800" height="600" }
+::image{ src="/images/1.jpg" alt="Hero image" width="800" height="400" }
 ::
 
   </div>
@@ -23,7 +23,7 @@ description: 'En beskrivelse'
 
   <div class="image-container">
 
-::image{ src="/images/1.jpg" alt="Second image" width="400" height="500" }
+::image{ src="/images/1.jpg" alt="Second image" width="300" height="500" }
 ::
 
   </div>
@@ -36,7 +36,7 @@ description: 'En beskrivelse'
 
   <div class="image-container">
 
-::image{ src="/images/1.jpg" alt="Third image" width="400" height="400" }
+::image{ src="/images/1.jpg" alt="Third image" width="600" height="400" }
 ::
 
   </div>

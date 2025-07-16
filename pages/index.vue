@@ -15,6 +15,11 @@ useSeoMeta({
     <ContentRenderer tag="section" class="content-grid" v-if="home" :value="home" />
     <div v-else>Home not found</div>
   </main>
+  <footer>
+    <div class="container">
+      <p>&copy; {{ new Date().getFullYear() }} Kit Bos. All rights reserved.</p>
+    </div>
+  </footer>
 </template>
 
 <style lang="scss">
@@ -60,6 +65,22 @@ useSeoMeta({
   }
 }
 
+footer .container{
+    margin: 4rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.7;
+
+    @include tablet {
+      font-size: 1rem;
+    }
+
+    @include desktop {
+      font-size: 1.1rem;
+    }
+  }
+
 .content-grid {
   display: flex;
   flex-direction: column;
@@ -94,8 +115,9 @@ useSeoMeta({
 
   &:nth-child(2n) {
     @include tablet {
-      flex-direction: row;
-      align-items: flex-start;
+      flex-direction: row-reverse;
+      align-items: flex-end;
+      justify-content: center;
       gap: 2rem;
       margin-left: 20%;
       max-width: 75%;
@@ -105,7 +127,6 @@ useSeoMeta({
       gap: 3rem;
       margin-left: 25%;
       max-width: 70%;
-      flex-direction: row-reverse;
     }
   }
 
@@ -157,18 +178,11 @@ useSeoMeta({
       width: 100%;
       height: auto;
       border-radius: 2px;
-      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-
-      &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 60px rgba(0, 0, 0, 0.18);
-      }
+      overflow: hidden;
     }
   }
 }
 
-// Special styles for offset items (side-by-side layout)
 .item:nth-child(2n),
 .item:nth-child(3n) {
   @include tablet {

@@ -17,7 +17,7 @@ defineProps<{
             :width="width"
             :height="height"
             :placeholder="[height,width]"
-            quality="10"
+            quality="80"
         />
     </div>
 </template>

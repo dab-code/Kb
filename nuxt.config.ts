@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   ],
   googleFonts: {
     families: {
-      'Funnel+Sans': [400, 700, 900],
+      'Tinos': true,
     }
   },
 
