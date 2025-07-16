@@ -1,0 +1,23 @@
+:root {
+    --text-color: #252525;
+    --background-color: #ebebeb;
+    --text-muted: #666;
+    --shadow-light: rgba(0, 0, 0, 0.05);
+    --shadow-medium: rgba(0, 0, 0, 0.1);
+}
+
+html, body {
+    font-family: "Kumbh Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
