@@ -63,8 +63,8 @@ useSeoMeta({
   }
 }
 
-footer .container{
-    margin: 4rem 0;
+footer.container{
+    margin: 4rem auto;
     text-align: center;
     font-size: 0.9rem;
     color: var(--text-color);
