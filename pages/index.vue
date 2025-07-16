@@ -15,10 +15,8 @@ useSeoMeta({
     <ContentRenderer tag="section" class="content-grid" v-if="home" :value="home" />
     <div v-else>Home not found</div>
   </main>
-  <footer>
-    <div class="container">
-      <p>&copy; {{ new Date().getFullYear() }} Kit Bos. All rights reserved.</p>
-    </div>
+  <footer class="container">
+    <p>&copy; {{ new Date().getFullYear() }} Kit Bos. All rights reserved.</p>
   </footer>
 </template>
 
