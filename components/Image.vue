@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { defineProps } from 'vue'
 defineProps<{
   src: string
   alt: string
@@ -16,15 +17,8 @@ defineProps<{
             :alt="alt"
             :width="width"
             :height="height"
-            :placeholder="[height,width]"
+            :placeholder="[width || 100, height || 100, 80, 5]"
             quality="80"
         />
     </div>
 </template>
-
-<style>
-.masonry-item {
-  max-width: 100%;
-  height: auto;
-}
-</style>

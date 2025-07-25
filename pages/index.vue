@@ -175,7 +175,7 @@ footer.container{
     img {
       width: 100%;
       height: auto;
-      border-radius: 2px;
+      border-radius: 3px;
       overflow: hidden;
     }
   }
