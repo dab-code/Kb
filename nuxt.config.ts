@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     static: true
   },
   modules: ['@nuxt/content', '@nuxt/image', '@nuxtjs/google-fonts'],
+
   css: [
     '~/scss/_reset.scss',
     '~/scss/global.scss',

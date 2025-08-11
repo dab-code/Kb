@@ -1,24 +1,43 @@
-<script setup lang="ts">
-const { data: home } = await useAsyncData(() => queryCollection('content').path('/').first())
-
-useSeoMeta({
-  title: home.value?.title,
-  description: home.value?.description
-})
-</script>
-
 <template>
   <main class="container">
     <header>
       <h1>Kit Bos</h1>
     </header>
-    <ContentRenderer tag="section" class="content-grid" v-if="home" :value="home" />
-    <div v-else>Home not found</div>
+
+      <ContentRenderer v-if="doc" tag="section" class="content-grid" :value="doc" />
+
+    <div v-else>Siden blev ikke fundet</div>
+
+    <footer class="container">
+      <p>&copy; {{ new Date().getFullYear() }} Kit Bos. All rights reserved.</p>
+    </footer>
   </main>
-  <footer class="container">
-    <p>&copy; {{ new Date().getFullYear() }} Kit Bos. All rights reserved.</p>
-  </footer>
 </template>
+
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const route = useRoute()
+
+// Build a content path from the catch-all slug, e.g. ['om'] -> '/om', [] -> '/'
+const contentPath = computed(() => {
+  const slug = route.params.slug
+  if (!slug) return '/'
+  return Array.isArray(slug) ? `/${slug.join('/')}` : `/${slug}`
+})
+
+// Fetch the matching document from the 'content' collection by path
+const { data: doc } = await useAsyncData(
+  () => `doc:${contentPath.value}`,
+  () => queryCollection('docs').path(contentPath.value).first(),
+  { watch: [contentPath] }
+)
+
+useSeoMeta({
+  title: () => doc.value?.title as any,
+  description: () => doc.value?.description as any
+})
+</script>
 
 <style lang="scss">
 @mixin tablet {
