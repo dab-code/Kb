@@ -1,6 +1,8 @@
 ---
-title: "Om | Kit Bos"
-description: "En beskrivelse om Kit Bos"
+title: 'Om | Kit Bos'
+description: 'En beskrivelse om Kit Bos'
+order: 2
+navigationItem: 'Om'
 ---
 
 <div class="item">

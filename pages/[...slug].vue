@@ -1,10 +1,53 @@
+<script setup lang="ts">
+import { computed } from "vue";
+
+const route = useRoute();
+
+const { data: navigation } = await useAsyncData('navigation', async () => {
+  const docs = await queryCollection('docs')
+  .select('path', 'title', 'meta')
+  .all();
+
+  return docs
+    .filter(doc => doc.path !== '/')
+    .sort((a, b) => Number(a.meta.order ?? 999) - Number(b.meta.order ?? 999));
+});
+
+const contentPath = computed(() => {
+  const slug = route.params.slug;
+  if (!slug) return '/';
+  return Array.isArray(slug) ? `/${slug.join('/')}` : `/${slug}`;
+});
+
+const { data: doc } = await useAsyncData(
+  () => `doc:${contentPath.value}`,
+  () => queryCollection('docs').path(contentPath.value).first(),
+  { watch: [contentPath] }
+);
+
+useSeoMeta({
+  title: () => doc.value?.title as any,
+  description: () => doc.value?.description as any,
+});
+</script>
+
 <template>
   <main class="container">
     <header>
-      <h1>Kit Bos</h1>
+        <NuxtLink to="/">
+            <h1>Kit Bos</h1>
+        </NuxtLink>
     </header>
 
-      <ContentRenderer v-if="doc" tag="section" class="content-grid" :value="doc" />
+    <nav>
+      <ul v-if="navigation">
+        <li v-for="item in navigation" :key="item.path">
+          <NuxtLink :to="item.path">{{ item.meta.navigationItem }}</NuxtLink>
+        </li>
+      </ul>
+    </nav>
+
+    <ContentRenderer v-if="doc" tag="section" class="content-grid" :value="doc" />
 
     <div v-else>Siden blev ikke fundet</div>
 
@@ -13,31 +56,6 @@
     </footer>
   </main>
 </template>
-
-<script setup lang="ts">
-import { computed } from 'vue'
-
-const route = useRoute()
-
-// Build a content path from the catch-all slug, e.g. ['om'] -> '/om', [] -> '/'
-const contentPath = computed(() => {
-  const slug = route.params.slug
-  if (!slug) return '/'
-  return Array.isArray(slug) ? `/${slug.join('/')}` : `/${slug}`
-})
-
-// Fetch the matching document from the 'content' collection by path
-const { data: doc } = await useAsyncData(
-  () => `doc:${contentPath.value}`,
-  () => queryCollection('docs').path(contentPath.value).first(),
-  { watch: [contentPath] }
-)
-
-useSeoMeta({
-  title: () => doc.value?.title as any,
-  description: () => doc.value?.description as any
-})
-</script>
 
 <style lang="scss">
 @mixin tablet {
@@ -82,21 +100,21 @@ useSeoMeta({
   }
 }
 
-footer.container{
-    margin: 4rem auto;
-    text-align: center;
-    font-size: 0.9rem;
-    color: var(--text-color);
-    opacity: 0.7;
+footer.container {
+  margin: 4rem auto;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  opacity: 0.7;
 
-    @include tablet {
-      font-size: 1rem;
-    }
-
-    @include desktop {
-      font-size: 1.1rem;
-    }
+  @include tablet {
+    font-size: 1rem;
   }
+
+  @include desktop {
+    font-size: 1.1rem;
+  }
+}
 
 .content-grid {
   display: flex;
@@ -243,7 +261,12 @@ footer.container{
 }
 
 // Typography improvements
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 300;
   margin-bottom: 1rem;
 }

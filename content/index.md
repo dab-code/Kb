@@ -1,6 +1,8 @@
 ---
 title: 'Kit Bos'
 description: 'En beskrivelse'
+order: 1
+navigationItem: 'Forside'
 ---
 
 <div class="item">
