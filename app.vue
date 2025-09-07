@@ -31,8 +31,8 @@ const content = [
     image: {
       url: "/images/1.jpg",
       alt: "Hero image",
-      width: 300,
-      height: 500,
+      width: 400,
+      height: 600,
     },
   }
 ]
@@ -235,6 +235,7 @@ footer.container {
 
     img {
       width: 100%;
+      max-width: 500px;
       height: auto;
       border-radius: 3px;
       overflow: hidden;
@@ -263,7 +264,7 @@ footer.container {
       img {
         width: auto !important;
         height: auto !important;
-        max-width: none;
+        max-width: 500px;
         display: block;
       }
     }
@@ -272,6 +273,8 @@ footer.container {
 
 // Specific image sizing for different layouts
 .item--full .image-container img {
+  max-width: none !important;
+  width: 100%;
   object-fit: cover;
 }
 
