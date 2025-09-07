@@ -5,36 +5,34 @@
 // });
 const content = [
   {
-    header: 'header',
-    type: 'full',
-    text: 'This is the hero image with a beautiful description that tells a story about the image above.',
+    header: null,
+    type: "full",
+    text: "This is the hero image with a beautiful description that tells a story about the image above.",
     image: {
-      url: '/images/1.jpg',
-      alt: 'Hero image',
+      url: "/images/1.jpg",
+      alt: "Hero image",
       width: 800,
       height: 400,
     },
   },
   {
-    header: null,
-    type: 'left-content',
-    text: 'Kit Bos er en tekstilkunstner med globalt udsyn og naturen som medskaber. Hun skaber rumlig tekstilkunst med global resonans i transformationen af tekstil og tradition over i en stoflig fortælling om naturens transformationer.',
+    header: 'Om',
+    type: "right-content",
+    text: `Kit Bos er en tekstilkunstner med globalt udsyn og naturen som medskaber. Hun skaber rumlig tekstilkunst med global resonans i transformationen af tekstil og tradition over i en stoflig fortælling om naturens transformationer.
+    <br>
+    <br>
+    Hun er autodidakt tekstilkunstner bosat i Nordjylland, efter længere ophold i Centraleuropa, Mellemøsten og Sydøstasien. Hun arbejder primært med bløde naturlige tekstiler og har udviklet et personligt kunstnerisk sprog, hvor naturens cyklus - det der er, har været og vil komme - er omdrejningspunktet.
+    <br>
+    <br>
+    Hendes værker opstår i mødet mellem traditionelle teknikker som vævning, hækling, strik og snoninger i en eksperimenterende tilgang til tekstil som form, struktur og fortælling. Hun undersøger materialets transformationer og lader overflader og former forvandle sig til organiske udtryk – ofte med sanselige lag af tekstur, farve og bevægelse.
+    <br>
+    <br>
+    `,
     image: {
-      url: '/images/1.jpg',
-      alt: 'Hero image',
-      width: 200,
-      height: 400,
-    },
-  },
-  {
-    header: null,
-    type: 'right-content',
-    text: 'Hun er autodidakt tekstilkunstner bosat i Nordjylland, efter længere ophold i Centraleuropa, Mellemøsten og Sydøstasien. Hun arbejder primært med bløde naturlige tekstiler og har udviklet et personligt kunstnerisk sprog, hvor naturens cyklus - det der er, har været og vil komme - er omdrejningspunktet.',
-    image: {
-      url: '/images/1.jpg',
-      alt: 'Hero image',
-      width: 200,
-      height: 400,
+      url: "/images/1.jpg",
+      alt: "Hero image",
+      width: 300,
+      height: 500,
     },
   }
 ]
@@ -57,10 +55,10 @@ const content = [
     <div :class="['item', `item--${item.type}`]" v-for="(item, index) in content" :key="index">
       <div class="content">
         <h2 v-if="item.header">{{ item.header }}</h2>
-        <p>{{ item.text }}</p>
+        <p v-html="item.text"></p>
       </div>
       <div class="image-container">
-        <NuxtImg :src="item.image.url" format="webp" loading="lazy" :alt="item.image.alt" :width="item.image.width" :height="item.image.height" :placeholder="[100, 80, 5]" quality="80" />
+        <NuxtImg :src="item.image.url" format="webp" :loading="index > 0 ? 'lazy' : 'eager'" :alt="item.image.alt" :width="item.image.width" :height="item.image.height" :placeholder="[100, 80, 5]" quality="80" />
       </div>
     </div>
 
@@ -123,7 +121,7 @@ const content = [
     }
 
     @include desktop {
-      font-size: 3.5rem;
+      font-size: 2.5rem;
     }
   }
 }
@@ -196,6 +194,7 @@ footer.container {
     @include tablet {
       flex-direction: row;
       align-items: flex-start;
+      justify-content: center;
       gap: 2rem;
       margin-left: 10%;
       max-width: 80%;
@@ -239,6 +238,7 @@ footer.container {
       height: auto;
       border-radius: 3px;
       overflow: hidden;
+      object-fit: cover;
     }
   }
 }
@@ -258,8 +258,27 @@ footer.container {
 
     .image-container {
       order: 1;
-      flex: 0 0 60%;
+      flex: 0 0 auto;
+
+      img {
+        width: auto !important;
+        height: auto !important;
+        max-width: none;
+        display: block;
+      }
     }
+  }
+}
+
+// Specific image sizing for different layouts
+.item--full .image-container img {
+  object-fit: cover;
+}
+
+.item--left-content .image-container img,
+.item--right-content .image-container img {
+  @include tablet {
+    object-fit: cover;
   }
 }
 
