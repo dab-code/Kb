@@ -6,7 +6,22 @@ export default defineNuxtConfig({
   nitro: {
     static: true
   },
-  modules: ['@nuxt/content', '@nuxt/image', '@nuxtjs/google-fonts'],
+  modules: [
+    '@nuxt/image',
+    '@nuxtjs/google-fonts'
+  ],
+
+  image: {
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      '2xl': 1536
+    },
+  },
 
   css: [
     '~/scss/_reset.scss',
@@ -17,5 +32,4 @@ export default defineNuxtConfig({
       'Tinos': true,
     }
   },
-
 })
