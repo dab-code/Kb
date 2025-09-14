@@ -3,37 +3,155 @@
 //   title: () => doc.value?.title as any,
 //   description: () => doc.value?.description as any,
 // });
+
+const scrollToSection = (sectionId: string, event: Event) => {
+  event.preventDefault()
+  const element = document.getElementById(sectionId)
+  if (element) {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+    // Update URL hash for browser history and accessibility
+    window.history.pushState(null, '', `#${sectionId}`)
+  }
+}
+
 const content = [
   {
-    header: null,
-    type: "full",
-    text: "This is the hero image with a beautiful description that tells a story about the image above.",
-    image: {
-      url: "/images/1.jpg",
-      alt: "Hero image",
-      width: 800,
-      height: 400,
-    },
+    sectionTitle: "Tråde af ",
+    id: 'traede-af',
+    content: [
+      {
+        header: null,
+        type: "full",
+        text: "This is the hero image with a beautiful description that tells a story about the image above.",
+        list: null,
+        image: {
+          url: "/images/1.jpg",
+          alt: "Hero image",
+          width: 800,
+          height: 400,
+        },
+      },
+    ],
   },
   {
-    header: 'Om',
-    type: "right-content",
-    text: `Kit Bos er en tekstilkunstner med globalt udsyn og naturen som medskaber. Hun skaber rumlig tekstilkunst med global resonans i transformationen af tekstil og tradition over i en stoflig fortælling om naturens transformationer.
-    <br>
-    <br>
-    Hun er autodidakt tekstilkunstner bosat i Nordjylland, efter længere ophold i Centraleuropa, Mellemøsten og Sydøstasien. Hun arbejder primært med bløde naturlige tekstiler og har udviklet et personligt kunstnerisk sprog, hvor naturens cyklus - det der er, har været og vil komme - er omdrejningspunktet.
-    <br>
-    <br>
-    Hendes værker opstår i mødet mellem traditionelle teknikker som vævning, hækling, strik og snoninger i en eksperimenterende tilgang til tekstil som form, struktur og fortælling. Hun undersøger materialets transformationer og lader overflader og former forvandle sig til organiske udtryk – ofte med sanselige lag af tekstur, farve og bevægelse.
-    <br>
-    <br>
-    `,
-    image: {
-      url: "/images/1.jpg",
-      alt: "Hero image",
-      width: 400,
-      height: 600,
-    },
+    sectionTitle: "Værker - Every piece tells a story",
+    id: 'vaerker',
+    content: [
+      {
+        header: "Om",
+        type: "right-content",
+        text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae nisi dui. Phasellus iaculis cursus velit in ullamcorper. Nulla tempor a purus nec dapibus.`,
+        list: null,
+        image: {
+          url: "/images/1.jpg",
+          alt: "Hero image",
+          width: 400,
+          height: 600,
+        },
+      },
+      {
+        header: "Om",
+        type: "right-content",
+        text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae nisi dui. Phasellus iaculis cursus velit in ullamcorper. Nulla tempor a purus nec dapibus.`,
+        list: null,
+        image: {
+          url: "/images/1.jpg",
+          alt: "Hero image",
+          width: 400,
+          height: 600,
+        },
+      },
+      {
+        header: "Om",
+        type: "right-content",
+        text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae nisi dui. Phasellus iaculis cursus velit in ullamcorper. Nulla tempor a purus nec dapibus.`,
+        list: null,
+        image: {
+          url: "/images/1.jpg",
+          alt: "Hero image",
+          width: 400,
+          height: 600,
+        },
+      },
+      {
+        header: "Om",
+        type: "right-content",
+        text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae nisi dui. Phasellus iaculis cursus velit in ullamcorper. Nulla tempor a purus nec dapibus.`,
+        list: null,
+        image: {
+          url: "/images/1.jpg",
+          alt: "Hero image",
+          width: 400,
+          height: 600,
+        },
+      },
+      {
+        header: "Om",
+        type: "right-content",
+        text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae nisi dui. Phasellus iaculis cursus velit in ullamcorper. Nulla tempor a purus nec dapibus.`,
+        list: null,
+        image: {
+          url: "/images/1.jpg",
+          alt: "Hero image",
+          width: 400,
+          height: 600,
+        },
+      },
+    ],
+  },
+  {
+    sectionTitle: 'Udstillinger',
+    id: 'udstillinger',
+    content: [
+      {
+        header: "Om",
+        type: "left-content",
+        text: 'lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae nisi dui. Phasellus iaculis cursus velit in ullamcorper. Nulla tempor a purus nec dapibus.',
+        list: [
+          'Udstilling 1 - Sted - År',
+          'Udstilling 2 - Sted - År',
+          'Udstilling 3 - Sted - År',
+          'Udstilling 4 - Sted - År',
+          'Udstilling 5 - Sted - År',
+          'Udstilling 6 - Sted - År',
+          'Udstilling 7 - Sted - År',
+          'Udstilling 8 - Sted - År',
+          'Udstilling 9 - Sted - År',
+          'Udstilling 10 - Sted - År'
+        ],
+        image: null
+      }
+    ]
+  },
+  {
+    sectionTitle: 'Om værkerne',
+    id: 'om-vaerkerne',
+    content: [
+      {
+        header: null,
+        type: "left-content",
+        text: 'lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae nisi dui. Phasellus iaculis cursus velit in ullamcorper. Nulla tempor a purus nec dapibus.',
+        list: null,
+        image: null
+      }
+    ]
+  }
+  ,
+  {
+    sectionTitle: 'Om Kit',
+    id: 'om-kit',
+    content: [
+      {
+        header: null,
+        type: "left-content",
+        text: 'lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae nisi dui. Phasellus iaculis cursus velit in ullamcorper. Nulla tempor a purus nec dapibus.',
+        list: null,
+        image: null
+      }
+    ]
   }
 ]
 </script>
@@ -44,23 +162,32 @@ const content = [
       <h1>Kit Bos</h1>
     </header>
 
-    <nav>
-      <!-- <ul v-if="navigation">
-        <li v-for="item in navigation" :key="item.path">
-          <NuxtLink :to="item.path">{{ item.meta.navigationItem }}</NuxtLink>
+    <nav aria-label="Side sektioner">
+      <ul>
+        <li v-for="item in content" :key="item.id">
+          <a :href="`#${item.id}`" @click="scrollToSection(item.id, $event)" :aria-describedby="`sektion-${item.id}`">{{ item.sectionTitle }}</a>
         </li>
-      </ul> -->
+      </ul>
     </nav>
 
-    <div :class="['item', `item--${item.type}`]" v-for="(item, index) in content" :key="index">
-      <div class="content">
-        <h2 v-if="item.header">{{ item.header }}</h2>
-        <p v-html="item.text"></p>
+    <section class="section">
+      <div v-for="(section, sectionIndex) in content" :key="sectionIndex" class="content-grid">
+        <h2 :id="section.id" :aria-describedby="`sektion-${section.id}-beskrivelse`">{{ section.sectionTitle }}</h2>
+
+        <div :class="['item', `item--${item.type}`]" v-for="(item, index) in section.content" :key="index">
+          <div class="content">
+            <h3 v-if="item.header">{{ item.header }}</h3>
+            <p v-html="item.text" :id="section.content.length === 1 ? `sektion-${section.id}-beskrivelse` : undefined"></p>
+            <ul v-if="item.list && item.list.length">
+              <li v-for="(listItem, listIndex) in item.list" :key="listIndex">{{ listItem }}</li>
+            </ul>
+          </div>
+          <div class="image-container">
+            <NuxtImg v-if="item.image" :src="item.image.url" format="webp" :style="{ 'aspect-ratio': `${item.image.width} / ${item.image.height}` }" :loading="index > 0 ? 'lazy' : 'eager'" :alt="item.image.alt" :width="item.image.width" :height="item.image.height" :placeholder="[(item.image.width / 100) * 10, (item.image.height / 100) * 10, 5]" quality="80" />
+          </div>
+        </div>
       </div>
-      <div class="image-container">
-        <NuxtImg :src="item.image.url" format="webp" :loading="index > 0 ? 'lazy' : 'eager'" :alt="item.image.alt" :width="item.image.width" :height="item.image.height" :placeholder="[100, 80, 5]" quality="80" />
-      </div>
-    </div>
+    </section>
 
     <footer class="container">
       <p>&copy; {{ new Date().getFullYear() }} Kit Bos. All rights reserved.</p>
@@ -69,6 +196,10 @@ const content = [
 </template>
 
 <style lang="scss">
+html {
+  scroll-behavior: smooth;
+}
+
 @mixin tablet {
   @media screen and (min-width: 600px) {
     @content;
@@ -97,7 +228,7 @@ const content = [
 
   h1 {
     font-size: 2rem;
-    font-weight: 300;
+    font-weight: 600;
     color: var(--text-color);
     letter-spacing: 0.05em;
 
@@ -110,18 +241,105 @@ const content = [
     }
   }
 
-  h2 {
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: var(--text-color);
-    letter-spacing: 0.05em;
+  section h1 {
+    font-size: 1.75rem;
+    margin-bottom: -2rem;
+    font-weight: 500;
 
     @include tablet {
-      font-size: 2rem;
+      font-size: 2.25rem;
     }
 
     @include desktop {
       font-size: 2.5rem;
+    }
+  }
+
+  section h2 {
+    font-size: 1.75rem;
+    margin-bottom: -2rem;
+    font-weight: 600;
+
+    @include tablet {
+      font-size: 2.25rem;
+    }
+
+    @include desktop {
+      font-size: 2.5rem;
+    }
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+    letter-spacing: 0.05em;
+
+    @include tablet {
+      font-size: 1.75rem;
+    }
+
+    @include desktop {
+      font-size: 2rem;
+    }
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--text-color);
+    letter-spacing: 0.05em;
+
+    @include tablet {
+      font-size: 1.75rem;
+    }
+
+    @include desktop {
+      font-size: 2rem;
+    }
+  }
+}
+
+nav {
+  margin-bottom: 2rem;
+  text-align: center;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+
+    @include tablet {
+      gap: 1.5rem;
+    }
+  }
+
+  li {
+    margin: 0;
+  }
+
+  a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 300;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    opacity: 0.7;
+    display: inline-block;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+
+    @include tablet {
+      font-size: 1rem;
     }
   }
 }
@@ -145,24 +363,21 @@ footer.container {
 .content-grid {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 3rem;
+  margin-left: 5%;
+  max-width: 90%;
+  margin-bottom: 3rem;
 
   @include tablet {
-    gap: 6rem;
-  }
-
-  @include desktop {
-    gap: 8rem;
-  }
-}
-
-.content-grid .item--full {
-  @include tablet {
+    gap: 4rem;
+    margin-bottom: 4rem;
     margin-left: 10%;
     max-width: 80%;
   }
 
   @include desktop {
+    gap: 5rem;
+    margin-bottom: 5rem;
     margin-left: 15%;
     max-width: 70%;
   }
@@ -172,7 +387,7 @@ footer.container {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  margin-bottom: 6rem;
+  // margin-bottom: 6rem;
   position: relative;
 
   &--left-content {
@@ -181,8 +396,8 @@ footer.container {
       align-items: flex-end;
       justify-content: center;
       gap: 2rem;
-      margin-left: 10%;
-      max-width: 80%;
+      margin-left: 0%;
+      max-width: 100%;
     }
 
     @include desktop {
@@ -196,8 +411,8 @@ footer.container {
       align-items: flex-start;
       justify-content: center;
       gap: 2rem;
-      margin-left: 10%;
-      max-width: 80%;
+      margin-left: 0%;
+      max-width: 100%;
     }
 
     @include desktop {
@@ -228,6 +443,14 @@ footer.container {
         line-height: 1.8;
       }
     }
+
+    ul {
+      margin: 1rem 0;
+      list-style: disc;
+      li {
+        margin-left: 1.5rem;
+      }
+    }
   }
 
   .image-container {
@@ -249,7 +472,7 @@ footer.container {
   @include tablet {
     .content {
       order: 2;
-      flex: 0 0 40%;
+      flex: 1 0 40%;
       padding: 0;
 
       p {

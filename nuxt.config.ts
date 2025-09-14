@@ -29,7 +29,7 @@ export default defineNuxtConfig({
   ],
   googleFonts: {
     families: {
-      'Tinos': true,
+      'Roboto+Mono': '400..600',
     }
   },
 })
