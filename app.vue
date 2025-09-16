@@ -312,7 +312,12 @@ html {
 }
 
 // Typography
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-bottom: 1rem;
 }
 
@@ -634,17 +639,21 @@ nav {
 footer.container {
   margin: 4rem auto;
   text-align: center;
-  font-size: 0.9rem;
   color: var(--text-color);
   opacity: 0.7;
 
-  @include tablet {
-    font-size: 1rem;
+  p {
+    font-size: 0.9rem;
+
+    @include tablet {
+      font-size: 1rem;
+    }
+
+    @include desktop {
+      font-size: 1.1rem;
+    }
   }
 
-  @include desktop {
-    font-size: 1.1rem;
-  }
 }
 
 // Animations
