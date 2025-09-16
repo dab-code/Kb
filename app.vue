@@ -229,7 +229,7 @@ Hun har deltaget i udstillinger i ind- og udland og arbejder aktuelt med projekt
   {
     sectionTitle: 'Kontakt',
     sectionSubTitle: 'Kit Bos',
-    id: 'om-kit',
+    id: 'kontakt',
     content: [
       {
         header: null,
