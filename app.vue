@@ -293,10 +293,12 @@ Hun har deltaget i udstillinger i ind- og udland og arbejder aktuelt med projekt
 </template>
 
 <style lang="scss">
+// Global styles
 html {
   scroll-behavior: smooth;
 }
 
+// Mixins
 @mixin tablet {
   @media screen and (min-width: 600px) {
     @content;
@@ -309,11 +311,23 @@ html {
   }
 }
 
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+}
+
+p {
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+// Main container
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 
+  // Header styles
   header {
     margin: 3rem 0 4rem 0;
     text-align: center;
@@ -323,9 +337,10 @@ html {
     }
   }
 
+  // Main heading
   h1 {
     font-size: 2rem;
-    margin-bottom: 0rem;
+    margin-bottom: 0;
     font-weight: 600;
     color: var(--text-color);
     letter-spacing: 0.05em;
@@ -339,19 +354,7 @@ html {
     }
   }
 
-  section h1 {
-    font-size: 1.75rem;
-    font-weight: 500;
-
-    @include tablet {
-      font-size: 2.25rem;
-    }
-
-    @include desktop {
-      font-size: 2.5rem;
-    }
-  }
-
+  // Section headings
   section h2 {
     font-size: 1.75rem;
     font-weight: 600;
@@ -375,6 +378,7 @@ html {
     }
   }
 
+  // Item headings
   h2 {
     font-size: 1.25rem;
     font-weight: 600;
@@ -405,6 +409,7 @@ html {
     }
   }
 
+  // Body text
   p {
     font-size: 1rem;
 
@@ -418,6 +423,7 @@ html {
   }
 }
 
+// Navigation
 nav {
   margin-bottom: 2rem;
   text-align: center;
@@ -462,51 +468,33 @@ nav {
   }
 }
 
-footer.container {
-  margin: 4rem auto;
-  text-align: center;
-  font-size: 0.9rem;
-  color: var(--text-color);
-  opacity: 0.7;
-
-  @include tablet {
-    font-size: 1rem;
-  }
-
-  @include desktop {
-    font-size: 1.1rem;
-  }
-}
-
+// Content grid
 .content-grid {
   display: flex;
   flex-direction: column;
-  // gap: 3rem;
   margin-left: 5%;
   max-width: 90%;
   margin-bottom: 3rem;
 
   @include tablet {
-    // gap: 4rem;
     margin-bottom: 4rem;
     margin-left: 10%;
     max-width: 80%;
   }
 
   @include desktop {
-    // gap: 5rem;
     margin-bottom: 5rem;
     margin-left: 15%;
     max-width: 70%;
   }
 }
 
+// Item base styles
 .item {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   margin-bottom: 3rem;
-  // padding: .5rem;
   position: relative;
 
   @include tablet {
@@ -517,36 +505,7 @@ footer.container {
     margin-bottom: 5rem;
   }
 
-  &--left-content {
-    @include tablet {
-      flex-direction: row-reverse;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 2rem;
-      margin-left: 0%;
-      max-width: 100%;
-    }
-
-    @include desktop {
-      gap: 3rem;
-    }
-  }
-
-  &--right-content {
-    @include tablet {
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 2rem;
-      margin-left: 0%;
-      max-width: 100%;
-    }
-
-    @include desktop {
-      gap: 3rem;
-    }
-  }
-
+  // Content styles
   .content {
     order: 2;
     padding: 1rem 0;
@@ -581,6 +540,7 @@ footer.container {
     }
   }
 
+  // Image container base styles
   .image-container {
     order: 1;
 
@@ -595,6 +555,38 @@ footer.container {
   }
 }
 
+// Layout variations
+.item--left-content {
+  @include tablet {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  @include desktop {
+    gap: 3rem;
+  }
+}
+
+.item--right-content {
+  @include tablet {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  @include desktop {
+    gap: 3rem;
+  }
+}
+
+// Left and right content shared styles
 .item--left-content,
 .item--right-content {
   @include tablet {
@@ -623,37 +615,39 @@ footer.container {
   }
 }
 
-// Specific image sizing for different layouts
+// Full width layouts
+.item--full,
+.item--full-left {
+  .content p {
+    max-width: 100%;
+  }
+}
+
+// Image sizing overrides
 .item--full .image-container img {
   max-width: none !important;
   width: 100%;
   object-fit: cover;
 }
 
-.item {
-  &--full {
-    .content {
-      p {
-        max-width: 100%;
-      }
-    }
-  }
-  &--full-left {
-    .content {
-      p {
-        max-width: 100%;
-      }
-    }
-  }
-}
-.item--left-content .image-container img,
-.item--right-content .image-container img {
+// Footer
+footer.container {
+  margin: 4rem auto;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  opacity: 0.7;
+
   @include tablet {
-    object-fit: cover;
+    font-size: 1rem;
+  }
+
+  @include desktop {
+    font-size: 1.1rem;
   }
 }
 
-// Staggered animation for items
+// Animations
 .item {
   animation: fadeInUp 0.6s ease-out;
 
@@ -674,20 +668,5 @@ footer.container {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-// Typography improvements
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-bottom: 1rem;
-}
-
-p {
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
 }
 </style>
