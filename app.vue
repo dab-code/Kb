@@ -17,6 +17,21 @@ const scrollToSection = (sectionId: string, event: Event) => {
   }
 }
 
+// Dialog state management
+const openDialogId = ref<string | null>(null)
+
+const openDialog = (itemId: string) => {
+  openDialogId.value = itemId
+  // Prevent background scrolling
+  document.body.style.overflow = 'hidden'
+}
+
+const closeDialog = () => {
+  openDialogId.value = null
+  // Restore background scrolling
+  document.body.style.overflow = 'auto'
+}
+
 const content = [
   {
     sectionTitle: "Tråde af tavshed",
@@ -274,6 +289,17 @@ Hun har deltaget i udstillinger i ind- og udland og arbejder aktuelt med projekt
             <h3 v-if="item.header">{{ item.header }}</h3>
 
             <p v-html="item.text" :id="section.content.length === 1 ? `sektion-${section.id}-beskrivelse` : undefined"></p>
+
+            <!-- Read more button -->
+            <button
+              v-if="'extra' in item && item.extra"
+              @click="openDialog(`${section.id}-${index}`)"
+              class="read-more-btn"
+              :aria-describedby="`dialog-${section.id}-${index}`"
+            >
+              Læs mere
+            </button>
+
             <ul v-if="item.list && item.list.length">
               <li v-for="(listItem, listIndex) in item.list" :key="listIndex">{{ listItem }}</li>
             </ul>
@@ -289,6 +315,37 @@ Hun har deltaget i udstillinger i ind- og udland og arbejder aktuelt med projekt
     <footer class="container">
       <p>&copy; {{ new Date().getFullYear() }} Kit Bos. All rights reserved.</p>
     </footer>
+
+    <!-- Dialog Modal -->
+    <div
+      v-if="openDialogId"
+      class="dialog-backdrop"
+      @click="closeDialog"
+      role="dialog"
+      aria-modal="true"
+      :aria-labelledby="`dialog-title-${openDialogId}`"
+    >
+      <div class="dialog-content" @click.stop>
+        <button
+          class="dialog-close"
+          @click="closeDialog"
+          aria-label="Luk dialog"
+        >
+          ×
+        </button>
+
+        <div class="dialog-body">
+          <template v-for="(section, sectionIndex) in content" :key="sectionIndex">
+            <template v-for="(item, index) in section.content" :key="index">
+              <div v-if="openDialogId === `${section.id}-${index}` && 'extra' in item && item.extra">
+                <h3 v-if="item.header" :id="`dialog-title-${openDialogId}`">{{ item.header }}</h3>
+                <div v-html="(item as any).extra" class="dialog-text"></div>
+              </div>
+            </template>
+          </template>
+        </div>
+      </div>
+    </div>
   </main>
 </template>
 
@@ -676,6 +733,125 @@ footer.container {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+// Read more button
+.read-more-btn {
+  background: none;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  font-size: 0.8rem;
+  font-weight: 300;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0.7;
+  margin-top: 1rem;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+
+  &:focus {
+    outline: 2px solid #007acc;
+  }
+
+  @include tablet {
+    font-size: 0.9rem;
+  }
+}
+
+// Dialog styles
+.dialog-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.dialog-content {
+  background-color: var(--background-color, white);
+  border-radius: 3px;
+  max-width: 800px;
+  max-height: 90vh;
+  width: 100%;
+  position: relative;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+  @include tablet {
+    padding: 2rem;
+  }
+}
+
+.dialog-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--text-color);
+  opacity: 0.7;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.dialog-body {
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+
+  @include tablet {
+    padding: 1rem 0 0 0;
+  }
+
+  h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+
+    @include tablet {
+      font-size: 2rem;
+    }
+  }
+}
+
+.dialog-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  opacity: 0.8;
+
+  @include tablet {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  @include desktop {
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
   }
 }
 </style>
