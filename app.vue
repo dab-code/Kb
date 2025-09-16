@@ -1,9 +1,4 @@
 <script setup lang="ts">
-// useSeoMeta({
-//   title: () => doc.value?.title as any,
-//   description: () => doc.value?.description as any,
-// });
-
 const scrollToSection = (sectionId: string, event: Event) => {
   event.preventDefault()
   const element = document.getElementById(sectionId)

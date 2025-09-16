@@ -11,6 +11,18 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts'
   ],
 
+  app: {
+    head: {
+      title: 'KB | Tekstilkunstner',
+      htmlAttrs: {
+        lang: 'da'
+      },
+      meta: [
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      ]
+    }
+  },
+
   image: {
     screens: {
       xs: 320,
