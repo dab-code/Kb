@@ -19,83 +19,118 @@ const scrollToSection = (sectionId: string, event: Event) => {
 
 const content = [
   {
-    sectionTitle: "Tråde af ",
-    id: 'traede-af',
+    sectionTitle: "Tråde af tavshed",
+    sectionSubTitle: null,
+    id: 'traede-af-tavshed',
     content: [
       {
         header: null,
-        type: "full",
-        text: "This is the hero image with a beautiful description that tells a story about the image above.",
+        type: "left-content",
+        text: `"Tråde af Tavshed" favner både det tekstile og det sproglige, det sagte og det usagte. Den antyder, at der findes forbindelser - tråde - mellem liv, krop og sprog, og at tavsheden i sig selv kan være ladet med betydning. <br><br>Samlingen består af fem værker, der undersøger kvindelivets rytmer, sprogets kraft og kroppens tavse fortællinger. Med symboler, tekstil og papir skabes en sanselig og konceptuel samling, hvor tråde - både det fysiske og metaforiske - binder værkerne sammen.`,
         list: null,
         image: {
-          url: "/images/1.jpg",
-          alt: "Hero image",
-          width: 800,
-          height: 400,
+          url: "/images/tamponer.jpg",
+          alt: "Kvindeliv - en installation med hæklede former og rød tråd",
+          width: 400,
+          height: 800,
         },
       },
     ],
   },
   {
-    sectionTitle: "Værker - Every piece tells a story",
+    sectionTitle: "Værker",
+    sectionSubTitle: "Every piece tells a story",
     id: 'vaerker',
     content: [
       {
-        header: "Om",
+        header: "Det usagte",
         type: "right-content",
-        text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae nisi dui. Phasellus iaculis cursus velit in ullamcorper. Nulla tempor a purus nec dapibus.`,
+        text: `Et poetisk og konceptuelt stærkt værk, som balancerer materialitet og idé med stor præcision.<br><br>Dette værk er en undersøgelse af sprogets kraft og begrænsning. En fremmedordbog gennemboret af  metalstave og gennemvævet af garn - blødt og stift - symboliserer det talte, det tænkte og det tavse. Garnet flyder ud som tanker, der aldrig blev formuleret, og som stadig binder os til hinanden. Jeg ønsker at skabe rum for refleksion over, hvordan ord former vores liv - og hvordan fraværet af dem kan være lige så betydningsfuldt.`,
+        extra: `En objektbaseret installation med en tyk, tung gammel fremmedordbog ,der er
+gennemboret af fire metalstave, som gennemsyrer dens indhold fra bagside til forside. Mellem udvalgte sider flyder garn ud, nogle tråde bløde og levende, andre hærdede og stive - som ord, der aldrig blev sagt, men som stadig findes i sprækkerne mellem tid og tanke.<br><br>
+Værket undersøger sprogets væsen: det talte og det usagte, det formede og det forstummede. Garnet fungerer som en visuel metafor for sprogets evne til at forbinde - mennesker, oplevelser, erindringer og omgivelser. De hærdede tråde peger på det, der stivner i os: de ord vi ikke fik sagt, de tanker der aldrig blev formuleret, de følelser der kun eksisterer som indre ekko.<br><br>
+Metalstavene gennemborer bogen som en gestus af vold, kontrol eller fastlåsning - men også som en måde at fastholde betydning, at insistere på sprogets tyngde. Værket taler om det, der siges uden ord, og det, der aldrig blev sagt, men som alligevel binder os sammen.<br><br>
+Værket fremstår som en stille refleksion over sprogets magt og begrænsning. Det er en undersøgelse af, hvordan vi kommunikerer - og hvordan vi nogle gange undlader det. Et værk, der insisterer på, at selv det usagte har form, farve og konsekvens.`,
         list: null,
         image: {
-          url: "/images/1.jpg",
-          alt: "Hero image",
+          url: "/images/det-usagte.jpg",
+          alt: "Det usagte - en bog med metalstænger og garn",
           width: 400,
           height: 600,
         },
       },
       {
-        header: "Om",
+        header: "Kvindeliv",
         type: "right-content",
-        text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae nisi dui. Phasellus iaculis cursus velit in ullamcorper. Nulla tempor a purus nec dapibus.`,
+        text: `Værket fremstå som et stille oprør: det insisterer på at synliggøre det usynlige, at æstetisere det oversete, og at give stemme til det, der ofte forties.<br><br>
+Værket undersøger menstruationens rolle som både biologisk realitet og kulturelt tabu. Med 38 hæklede former - én for hvert år en kvinde typisk menstruerer - ophængt i en rød tråd og samlet i en lås, skabes en visuel fortælling om kontrol, cyklus og kvindelig erfaring. Jeg ønsker at åbne for samtaler om, hvordan menstruation påvirker kvinders liv globalt - som kilde til diskrimination, men også som en kraftfuld og fælles erfaring.`,
+        extra: `En tekstil installation, der peger på menstruation som et biologisk vilkår, men også som et kulturelt og politisk fænomen. Den undersøger, hvordan kvinder verden over påvirkes, begrænses, beriges og diskrimineres af denne kropslige realitet. Hver hæklede form er unik, og materialets blødhed står i kontrast til emnets ofte hårde virkelighed - fra tabuisering og manglende adgang til hygiejneprodukter, til skam og social udstødelse.<br><br>
+        Med de 38 hæklede, tamponlignende objekter ophængt i en rød tråd og samlet i en lås, skabes en poetisk, politisk, sanselig og symbolsk fortælling om kvindens liv med menstruation. Den bliver en kommentar til den biologiske og kulturelle realitet, som menstruation udgør for kvinder verden over. Installationen refererer til det gennemsnitlige antal år en kvinde menstruerer - en livsfase ofte præget af både tavshed og tabuisering.<br><br>
+        Den røde tråd fungerer som en visuel og symbolsk linje: en livslinje, en blodlinje, en forbindelse mellem krop og samfund. Låsen samler og fastholder, som en metafor for kontrol, begrænsning - men også for styrke og sammenhold. Hver hæklede form er unik, og materialets blødhed står i kontrast til emnets ofte hårde virkelighed.<br><br>
+        Låsen, der samler tråden, kan tolkes som kontrol, som samfundets greb om kvindekroppen - men også som et symbol på styrke, sammenhold og modstand. Værket insisterer på at synliggøre det usynlige og give stemme til det, der ofte forties.<br><br>
+        Kvindeliv er en stille, men insisterende demonstration - en menostration - der inviterer til refleksion og samtale om kvindens plads i historien, i samfundet og i sin egen krop.<br><br>
+        Værket inviterer til refleksion over menstruationens rolle i kvinders liv - som kilde til diskrimination, men også som et tegn på vitalitet, cyklisk kraft og samhørighed. Det peger på de globale forskelle i adgang til menstruationsprodukter, hygiejne, og frihed - og på de fælles erfaringer, der binder kvinder sammen på tværs af kulturer.`,
         list: null,
         image: {
-          url: "/images/1.jpg",
-          alt: "Hero image",
+          url: "/images/tamponer.jpg",
+          alt: "Kvindeliv - en installation med hæklede former og rød tråd",
           width: 400,
           height: 600,
         },
       },
       {
-        header: "Om",
+        header: "Livstråde",
         type: "right-content",
-        text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae nisi dui. Phasellus iaculis cursus velit in ullamcorper. Nulla tempor a purus nec dapibus.`,
+        text: `En stille, men insisterende gestus, der bliver en hyldest til det flydende, det sanselige og det sammensatte. Det er et værk, der lader materialet tale - og som inviterer til at reflektere over, hvordan livets tråde væves, vikles og flyder videre.
+
+Værket visualisere kvindelivets kompleksitet og kontinuitet. Garnet, viklet omkring kvindetegnet og flydende ud i rummet, symboliserer de mange livsmomenter, der tilsammen danner et væv af erfaringer. Hver tråd repræsenterer en følelse, en begivenhed, et valg - og tilsammen skaber de en strøm, der forbinder fortid, nutid og fremtid. Værket er en hyldest til det flydende, det sanselige og det sammensatte i kvindens liv.`,
+        extra: `En tekstil installation med et kvindetegn, omslynget af garn i et væld af farver, danner centrum i værket Livstråde. Garnet er viklet tæt omkring symbolets kontur, som en visuel fortælling om identitet, erfaring og livets mange lag. Fra værkets flyder lange tråde ned ad væggen og ud på gulvet - som en strøm af liv, der overskrider rammer og former og ikke lader sig begrænse af rum.<br><br>
+        Farverne repræsenterer livets nuancer: glæde, sorg, styrke, sårbarhed, transformation, barndom, moderskab, tab, kærlighed, styrke og transformation. Hver tråd bærer sin egen fortælling, og tilsammen danner de et landskab af kvindelig erfaring. Værket peger på, hvordan livet ikke er en række adskilte begivenheder eller en lineær fortælling, men et væv af oplevelser, relationer og valg - bundet sammen i en kontinuerlig strøm der skaber helheden.<br><br>
+        Installationen inviterer til at reflektere over, hvordan vi bærer vores liv med os - ikke som enkeltstående begivenheder, men som sammenvævede tråde, der flyder videre, forbinder os og efterlader spor.<br><br>
+        Livstråde er både en hyldest og en undersøgelse af kvindens livsrejse. Det er et værk, der insisterer på at give plads til det flydende, det sanselige og det sammensatte - og som lader garnet tale, hvor ord ikke slår til.`,
         list: null,
         image: {
-          url: "/images/1.jpg",
-          alt: "Hero image",
+          url: "/images/livstraede.jpg",
+          alt: "Livstråde - en installation med et kvindetegn og garn",
           width: 400,
           height: 600,
         },
       },
       {
-        header: "Om",
+        header: "Interferens",
         type: "right-content",
-        text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae nisi dui. Phasellus iaculis cursus velit in ullamcorper. Nulla tempor a purus nec dapibus.`,
+        text: `Værket er en poetisk undersøgelse af forbindelser - både de synlige og de usynlige. Den organiske struktur, opbygget af looping former og indviklede netværk, fremstår som en slags fysisk visualisering af mentale eller sociale systemer. Materialerne, bløde og taktile, kontrasterer med den komplekse og næsten teknologiske form, hvilket skaber en spænding mellem det håndlavede og det systemiske.br>br>
+        Skulpturen kaster subtile skygger, som forlænger værkets tilstedeværelse ud i rummet. Skyggerne bliver en aktiv del af værket - som ekkoer af de forbindelser, vi ikke altid ser, men som påvirker os.<br><br>
+        Værket refererer til de mønstre, der opstår, når forskellige bølger - af tanke, af relation, af energi - mødes og påvirker hinanden. Det er et værk, der inviterer til refleksion over, hvordan vi som mennesker er viklet ind i hinandens liv, og hvordan vores handlinger og tilstedeværelse skaber resonans i fællesskabet.`,
+        extra: `En tekstil installation, der udforsker det usynlige felt mellem mennesker - de tråde, der binder os sammen, uden at vi nødvendigvis ser dem. Værket fremstår som en organisk struktur, et væv af looping former og forbindelser, der både kan læses som et neuralt netværk, et socialt system eller en indre tilstand.<br>
+Materialerne er bløde og sanselige, men formen er kompleks og næsten teknologisk. Det skaber en spænding mellem det intuitive og det konstruerede, det personlige og det universelle. Skyggerne, som værket kaster på væggen, bliver en del af fortællingen - som spor af bevægelse, tanke og tilstedeværelse.
+<br><br>
+Værket fremstår i krydsfeltet mellem tekstil og skulptur og kredser om relationer, hukommelse og de mønstre, vi gentager - bevidst eller ubevidst. “Interferens” er en invitation til at stoppe op og mærke forbindelsen.`,
         list: null,
         image: {
-          url: "/images/1.jpg",
-          alt: "Hero image",
+          url: "/images/interferens.jpg",
+          alt: "Interferens - en organisk tekstil installation",
           width: 400,
           height: 600,
         },
       },
       {
-        header: "Om",
+        header: "Kroppens ekko",
         type: "right-content",
-        text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae nisi dui. Phasellus iaculis cursus velit in ullamcorper. Nulla tempor a purus nec dapibus.`,
+        text: `Værket “Kroppens Ekko” er en skulpturel undersøgelse af den menneskelige tilstedeværelse - ikke som figur, men som aftryk. Den vertikale struktur, sammensat af uregelmæssige, sammenvævede løkker, fremstår som en abstrakt silhuet, en slags kropslig resonans i rummet. Materialerne - rå, tekstile og taktile - er valgt for deres evne til at bære både fysisk og symbolsk tyngde.
+<br><br>
+Værket balancerer mellem det organiske og det konstruerede, og det spiller aktivt med negativt rum og skygger, som en forlængelse af selve formen. Det er en refleksion over, hvordan vi som mennesker efterlader spor - i hinanden, i landskabet, i tiden.
+<br>
+Værket kredser om forbindelser, hukommelse og det sanselige møde mellem krop og materiale. “Kroppens Ekko” er en invitation til at mærke det, der ikke nødvendigvis kan ses, men som alligevel er til stede.`,
+        extra: `En skulptur, der balancerer mellem det fysiske og det poetiske. Den vertikale komposition af sammenvævede løkker danner en abstrakt form, der kan læses som en kropslig silhuet - eller som et netværk af indre forbindelser. Værket er både skrøbeligt og kraftfuldt, og det spiller med tekstur, rum og skygge for at skabe en sanselig oplevelse.
+<br><br>
+Materialerne - reb og tekstil - bærer spor af håndens arbejde og tidens gang. De inviterer til nærvær og refleksion over, hvordan vi som mennesker er viklet ind i hinanden og i verden omkring os.
+<br><br>
+Værket opstår i krydsfeltet mellem tekstil, skulptur og installation, og undersøger relationer, hukommelse og kroppens tilstedeværelse i rummet.`,
         list: null,
         image: {
-          url: "/images/1.jpg",
-          alt: "Hero image",
+          url: "/images/kroppens-ekko.jpg",
+          alt: "Kroppens ekko - en tekstil skulptur",
           width: 400,
           height: 600,
         },
@@ -104,50 +139,106 @@ const content = [
   },
   {
     sectionTitle: 'Udstillinger',
+    sectionSubTitle: null,
     id: 'udstillinger',
     content: [
       {
-        header: "Om",
-        type: "left-content",
-        text: 'lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae nisi dui. Phasellus iaculis cursus velit in ullamcorper. Nulla tempor a purus nec dapibus.',
+        header: "Censureret udstillinger",
+        type: "full-left",
+        text: null,
         list: [
-          'Udstilling 1 - Sted - År',
-          'Udstilling 2 - Sted - År',
-          'Udstilling 3 - Sted - År',
-          'Udstilling 4 - Sted - År',
-          'Udstilling 5 - Sted - År',
-          'Udstilling 6 - Sted - År',
-          'Udstilling 7 - Sted - År',
-          'Udstilling 8 - Sted - År',
-          'Udstilling 9 - Sted - År',
-          'Udstilling 10 - Sted - År'
+          '2011 Forårsudstilling “Kunsten på første” i AKKC, Aalborg '
+        ],
+        image: null
+      },
+      {
+        header: "Udstillinger",
+        type: "full-left",
+        text: null,
+        list: [
+          '2025 gruppeudstilling m. Lærke Bagger, Arken museum for samtidskunst',
+          '2016 Det gamle rådhus, Aalborg',
+          '2010 Galleri Lykkegaard, Tversted',
+          'Galleri Århus',
+          'Bunderup ødekirke',
+          '2010 Knivholt hovedgaard, Frederikshavn',
+          '2009 Kunst på Rådhuspladsen København',
+          'Galleri Provence, Vadum',
+        ],
+        image: null
+      },
+      {
+        header: "Showroom",
+        type: "full-left",
+        text: null,
+        list: [
+          '2013 - 2017 Tostrup',
+          '2001 - 2003 Singapore'
+        ],
+        image: null
+      },
+      {
+        header: null,
+        type: "left-content",
+        text: null,
+        list: [
+          '2010-2011 uddannet kulturarrangør'
         ],
         image: null
       }
     ]
   },
   {
-    sectionTitle: 'Om værkerne',
-    id: 'om-vaerkerne',
+    sectionTitle: 'Om Kit',
+    sectionSubTitle: null,
+    id: 'om-kit',
     content: [
       {
         header: null,
-        type: "left-content",
-        text: 'lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae nisi dui. Phasellus iaculis cursus velit in ullamcorper. Nulla tempor a purus nec dapibus.',
+        type: "full",
+        text: `
+        Kit Bos er kulturarrangør, interior designer og tekstilkunstner med globalt udsyn og livserfaringerne som medskaber. Hun skaber rumlig tekstilkunst med global resonans i transformationen af tekstil og tradition over i en stoflig fortælling om livets transformationer.
+
+
+
+Hun er autodidakt tekstilkunstner, der efter at have været bosat i Centraleuropa, Mellemøsten og Sydøstasien nu er bosat i Nordjylland.
+
+Hun arbejder primært med bløde naturlige tekstiler og har udviklet et personligt kunstnerisk sprog, hvor livets cyklus - det der har været, nu er, og vil komme - er omdrejningspunktet.
+
+
+
+Hendes værker opstår i mødet mellem traditionelle teknikker som vævning, hækling, strik og snoninger i en eksperimenterende tilgang til tekstil som form, struktur og fortælling. Hun undersøger materialets transformationer og lader overflader og former forvandle sig til organiske udtryk - ofte med sanselige lag af tekstur, farve og bevægelse.
+
+<br><br>
+
+Livets cyklus - forandring, udvikling, vækst, afvikling - er integreret i hendes tilgang, og værkerne peger både bagud mod tekstilhåndværkets arv og fremad mod en ny forståelse af liv og materiale som medskabende og fortællende.
+
+<br><br>
+
+Hun har deltaget i udstillinger i ind- og udland og arbejder aktuelt med projekter, der fokuserer på livets betydning i hendes kunstneriske praksis, med tekstil som medium for refleksion, sansning og bæredygtighed.
+
+<br><br>
+
+“Materialet bærer på en hukommelse. Garnet strækker sig over tid og steder - jeg følger det og ser, hvor det fører hen. Det åbner rum, man ikke træder ind i, men sanser. Som en skygge af noget dybere.”
+        `,
         list: null,
         image: null
       }
     ]
-  }
-  ,
+  },
   {
-    sectionTitle: 'Om Kit',
+    sectionTitle: 'Kontakt',
+    sectionSubTitle: 'Kit Bos',
     id: 'om-kit',
     content: [
       {
         header: null,
         type: "left-content",
-        text: 'lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae nisi dui. Phasellus iaculis cursus velit in ullamcorper. Nulla tempor a purus nec dapibus.',
+        text: `
+        <b>Tlf:</b> <a href="tel:+4560789018">+45 60 78 90 18</a><br>
+        <b>Mail:</b> <a href="mailto:info@kitbos.dk">info@kitbos.dk</a><br>
+        <b>Addresse:</b> Østeraagade, 9000 Aalborg, Denmark
+        `,
         list: null,
         image: null
       }
@@ -160,6 +251,7 @@ const content = [
   <main class="container">
     <header>
       <h1>Kit Bos</h1>
+      <p>Tekstilkunstner</p>
     </header>
 
     <nav aria-label="Side sektioner">
@@ -172,20 +264,25 @@ const content = [
 
     <section class="section">
       <div v-for="(section, sectionIndex) in content" :key="sectionIndex" class="content-grid">
-        <h2 :id="section.id" :aria-describedby="`sektion-${section.id}-beskrivelse`">{{ section.sectionTitle }}</h2>
+        <header>
+          <h2 :id="section.id" :aria-describedby="`sektion-${section.id}-beskrivelse`">{{ section.sectionTitle }}</h2>
+          <p v-if="section.sectionSubTitle">{{ section.sectionSubTitle }}</p>
+        </header>
 
-        <div :class="['item', `item--${item.type}`]" v-for="(item, index) in section.content" :key="index">
+        <article :class="['item', `item--${item.type}`]" v-for="(item, index) in section.content" :key="index">
           <div class="content">
             <h3 v-if="item.header">{{ item.header }}</h3>
+
             <p v-html="item.text" :id="section.content.length === 1 ? `sektion-${section.id}-beskrivelse` : undefined"></p>
             <ul v-if="item.list && item.list.length">
               <li v-for="(listItem, listIndex) in item.list" :key="listIndex">{{ listItem }}</li>
             </ul>
           </div>
           <div class="image-container">
-            <NuxtImg v-if="item.image" :src="item.image.url" format="webp" :style="{ 'aspect-ratio': `${item.image.width} / ${item.image.height}` }" :loading="index > 0 ? 'lazy' : 'eager'" :alt="item.image.alt" :width="item.image.width" :height="item.image.height" :placeholder="[(item.image.width / 100) * 10, (item.image.height / 100) * 10, 5]" quality="80" />
+            <NuxtImg v-if="item.image" :src="item.image.url" format="webp" :style="{ 'aspect-ratio': `${item.image.width} / ${item.image.height}` }" :loading="index > 0 ? 'lazy' : 'eager'" :alt="item.image.alt" :width="item.image.width" :height="item.image.height"
+                     :placeholder="[(item.image.width / 100) * 10, (item.image.height / 100) * 10, 5]" quality="80" />
           </div>
-        </div>
+        </article>
       </div>
     </section>
 
@@ -228,6 +325,7 @@ html {
 
   h1 {
     font-size: 2rem;
+    margin-bottom: 0rem;
     font-weight: 600;
     color: var(--text-color);
     letter-spacing: 0.05em;
@@ -243,7 +341,6 @@ html {
 
   section h1 {
     font-size: 1.75rem;
-    margin-bottom: -2rem;
     font-weight: 500;
 
     @include tablet {
@@ -257,7 +354,6 @@ html {
 
   section h2 {
     font-size: 1.75rem;
-    margin-bottom: -2rem;
     font-weight: 600;
 
     @include tablet {
@@ -266,6 +362,16 @@ html {
 
     @include desktop {
       font-size: 2.5rem;
+    }
+  }
+
+  section header {
+    text-align: left;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    p {
+      margin-top: -1.5rem;
     }
   }
 
@@ -296,6 +402,18 @@ html {
 
     @include desktop {
       font-size: 2rem;
+    }
+  }
+
+  p {
+    font-size: 1rem;
+
+    @include tablet {
+      font-size: 1.25rem;
+    }
+
+    @include desktop {
+      font-size: 1.5rem;
     }
   }
 }
@@ -363,20 +481,20 @@ footer.container {
 .content-grid {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  // gap: 3rem;
   margin-left: 5%;
   max-width: 90%;
   margin-bottom: 3rem;
 
   @include tablet {
-    gap: 4rem;
+    // gap: 4rem;
     margin-bottom: 4rem;
     margin-left: 10%;
     max-width: 80%;
   }
 
   @include desktop {
-    gap: 5rem;
+    // gap: 5rem;
     margin-bottom: 5rem;
     margin-left: 15%;
     max-width: 70%;
@@ -387,13 +505,22 @@ footer.container {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  // margin-bottom: 6rem;
+  margin-bottom: 3rem;
+  // padding: .5rem;
   position: relative;
+
+  @include tablet {
+    margin-bottom: 4rem;
+  }
+
+  @include desktop {
+    margin-bottom: 5rem;
+  }
 
   &--left-content {
     @include tablet {
       flex-direction: row-reverse;
-      align-items: flex-end;
+      align-items: flex-start;
       justify-content: center;
       gap: 2rem;
       margin-left: 0%;
@@ -447,6 +574,7 @@ footer.container {
     ul {
       margin: 1rem 0;
       list-style: disc;
+
       li {
         margin-left: 1.5rem;
       }
@@ -472,7 +600,7 @@ footer.container {
   @include tablet {
     .content {
       order: 2;
-      flex: 1 0 40%;
+      flex: 0 0 calc(50% - 1rem);
       padding: 0;
 
       p {
@@ -482,13 +610,14 @@ footer.container {
 
     .image-container {
       order: 1;
-      flex: 0 0 auto;
+      flex: 0 0 calc(50% - 1rem);
 
       img {
-        width: auto !important;
+        width: 100% !important;
         height: auto !important;
-        max-width: 500px;
+        max-width: none;
         display: block;
+        object-fit: cover;
       }
     }
   }
@@ -501,6 +630,22 @@ footer.container {
   object-fit: cover;
 }
 
+.item {
+  &--full {
+    .content {
+      p {
+        max-width: 100%;
+      }
+    }
+  }
+  &--full-left {
+    .content {
+      p {
+        max-width: 100%;
+      }
+    }
+  }
+}
 .item--left-content .image-container img,
 .item--right-content .image-container img {
   @include tablet {
@@ -524,6 +669,7 @@ footer.container {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -537,7 +683,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 300;
   margin-bottom: 1rem;
 }
 
