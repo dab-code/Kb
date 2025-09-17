@@ -39,7 +39,7 @@ const content = [
         text: `"Tråde af Tavshed" favner både det tekstile og det sproglige, det sagte og det usagte. Den antyder, at der findes forbindelser - tråde - mellem liv, krop og sprog, og at tavsheden i sig selv kan være ladet med betydning. <br><br>Samlingen består af fem værker, der undersøger kvindelivets rytmer, sprogets kraft og kroppens tavse fortællinger. Med symboler, tekstil og papir skabes en sanselig og konceptuel samling, hvor tråde - både det fysiske og metaforiske - binder værkerne sammen.`,
         list: null,
         image: {
-          url: "/images/tamponer.jpg",
+          url: "/images/tamponer-2.jpg",
           alt: "Kvindeliv - en installation med hæklede former og rød tråd",
           width: 400,
           height: 800,
@@ -82,7 +82,7 @@ Værket undersøger menstruationens rolle som både biologisk realitet og kultur
         Værket inviterer til refleksion over menstruationens rolle i kvinders liv - som kilde til diskrimination, men også som et tegn på vitalitet, cyklisk kraft og samhørighed. Det peger på de globale forskelle i adgang til menstruationsprodukter, hygiejne, og frihed - og på de fælles erfaringer, der binder kvinder sammen på tværs af kulturer.`,
         list: null,
         image: {
-          url: "/images/tamponer.jpg",
+          url: "/images/tamponer-2.jpg",
           alt: "Kvindeliv - en installation med hæklede former og rød tråd",
           width: 400,
           height: 600,
