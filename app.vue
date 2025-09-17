@@ -777,7 +777,7 @@ footer.container {
   background-color: var(--background-color, white);
   border-radius: 3px;
   max-width: 800px;
-  max-height: 90vh;
+  max-height: 90dvh;
   width: 100%;
   position: relative;
   overflow-y: auto;
