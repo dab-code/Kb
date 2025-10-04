@@ -39,7 +39,7 @@ const content = [
         text: `"Tråde af Tavshed" favner både det tekstile og det sproglige, det sagte og det usagte. Den antyder, at der findes forbindelser - tråde - mellem liv, krop og sprog, og at tavsheden i sig selv kan være ladet med betydning. <br><br>Samlingen består af værker, der undersøger kvindelivets rytmer, sprogets kraft og kroppens tavse fortællinger. Med symboler, tekstil og papir skabes en sanselig og konceptuel samling, hvor tråde - både det fysiske og metaforiske - binder værkerne sammen.`,
         list: null,
         image: {
-          url: "/images/bh-1.jpg",
+          url: "/images/bh-1.jpeg",
           alt: "Bh - en skulptur i tekstil",
           width: 500,
           height: 700,
@@ -59,7 +59,7 @@ const content = [
         extra: null,
         list: null,
         image: {
-          url: "/images/netvaerk.jpg",
+          url: "/images/net.jpeg",
           alt: "Netværk - et tekstilt narrativ om relationer og rytme",
           width: 400,
           height: 600,
@@ -93,7 +93,7 @@ At vi rummer begær og bekymring.<br>
 At vi er hele, selv når vi er i stykker.`,
         list: null,
         image: {
-          url: "/images/bh-2.jpg",
+          url: "/images/bh-2.jpeg",
           alt: "KvindenBrystet som form og fortælling - en skulptur i tekstil",
           width: 400,
           height: 600,
