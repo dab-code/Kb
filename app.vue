@@ -36,13 +36,13 @@ const content = [
       {
         header: null,
         type: "left-content",
-        text: `"Tråde af Tavshed" favner både det tekstile og det sproglige, det sagte og det usagte. Den antyder, at der findes forbindelser - tråde - mellem liv, krop og sprog, og at tavsheden i sig selv kan være ladet med betydning. <br><br>Samlingen består af fem værker, der undersøger kvindelivets rytmer, sprogets kraft og kroppens tavse fortællinger. Med symboler, tekstil og papir skabes en sanselig og konceptuel samling, hvor tråde - både det fysiske og metaforiske - binder værkerne sammen.`,
+        text: `"Tråde af Tavshed" favner både det tekstile og det sproglige, det sagte og det usagte. Den antyder, at der findes forbindelser - tråde - mellem liv, krop og sprog, og at tavsheden i sig selv kan være ladet med betydning. <br><br>Samlingen består af værker, der undersøger kvindelivets rytmer, sprogets kraft og kroppens tavse fortællinger. Med symboler, tekstil og papir skabes en sanselig og konceptuel samling, hvor tråde - både det fysiske og metaforiske - binder værkerne sammen.`,
         list: null,
         image: {
-          url: "/images/tamponer-2.jpg",
-          alt: "Kvindeliv - en installation med hæklede former og rød tråd",
-          width: 400,
-          height: 800,
+          url: "/images/bh-1.jpg",
+          alt: "Bh - en skulptur i tekstil",
+          width: 500,
+          height: 700,
         },
       },
     ],
@@ -52,6 +52,53 @@ const content = [
     sectionSubTitle: "Every piece tells a story",
     id: 'vaerker',
     content: [
+      {
+        header: '"Netværk" - Et tekstilt narrativ om relationer og rytme',
+        type: "right-content",
+        text: `I “Netværk” udforskes forbindelser - både de synlige og de subtile - gennem et organisk, tredimensionelt tekstilunivers. Værket består af snoede og viklede tråde, der slynger sig omkring en indre struktur, som var de relationer, vi bygger op omkring os. De uregelmæssige kurver og løkker skaber en rytme, der både er intuitiv og uforudsigelig, som livets egne bevægelser.<br><br>Materialets taktile karakter - det bløde garn mod den faste tråd - fremkalder en sanselighed, der inviterer beskueren til at reflektere over, hvordan vi vikles ind i hinanden. Farvevalget i neutrale toner med mørkere accenter understreger kontrasten mellem det rolige og det komplekse, det kendte og det ukendte.<br><br>“Netværk” er ikke blot en skulptur, men et poetisk rum, hvor forbindelser opstår, opløses og genopstår. Det er en hyldest til det menneskelige behov for kontakt - og til den skønhed, der findes i det uperfekte og uforudsigelige.`,
+        extra: null,
+        list: null,
+        image: {
+          url: "/images/netvaerk.jpg",
+          alt: "Netværk - et tekstilt narrativ om relationer og rytme",
+          width: 400,
+          height: 600,
+        },
+      },
+      {
+        header: 'Kvinden',
+        type: "right-content",
+        text: `Brystet som form og fortælling<b><b>Et værk i tekstil og gips, hvor det feminine kropselement – brystet – træder frem som både fysisk form og symbolsk rum. Garnets bløde struktur og gipsens hårde skal skaber en dobbelthed: det skrøbelige og det stærke, det sanselige og det beskyttende.<br><br>Værket undersøger brystets rolle i kvindelivet: som kilde til næring, som objekt for begær, som sted for sygdom. Det er en fortælling om moderskab og seksualitet, om tab og transformation.<br><br>Materialerne taler med hinanden – garnet vikler sig om kroppen, gipsen dækker og afslører. Et værk, der insisterer på at give form til det usynlige og stemme til det tyste.`,
+        extra: `To skåle af garn, blødt og stramt, bærer spor af liv.<br>
+De er formet af omsorg og uro, af begær og bekymring.<br>
+Et bryst er ikke bare en krop - det er et sted.<br>
+Et sted hvor barnet finder næring,<br>
+hvor elskeren finder hud,<br>
+hvor sygdom kan slå rødder.<br><br>
+Det feminine er ikke svagt.<br>
+Det er delikat som tråd, men stærkt som netværk.<br>
+Vi vikler os ind i forventninger,<br>
+i roller, i rytmer, i rytmer der brydes.<br>
+Brystet - som symbol, som sansning, som sårbarhed -<br>
+bærer kvindelivets lag.<br><br>
+Der er skønhed i asymmetrien.<br>
+I det uperfekte, det helende, det tabte.<br>
+Plasteret dækker ikke - det afslører.<br>
+Garnet holder ikke fast - det forbinder.<br><br>
+Dette værk er ikke en hyldest.<br>
+Det er en påmindelse.<br>
+Om at kvindeliv er vævet af både blødhed og brud.<br>
+At vi giver liv, og mister.<br>
+At vi rummer begær og bekymring.<br>
+At vi er hele, selv når vi er i stykker.`,
+        list: null,
+        image: {
+          url: "/images/bh-2.jpg",
+          alt: "KvindenBrystet som form og fortælling - en skulptur i tekstil",
+          width: 400,
+          height: 600,
+        },
+      },
       {
         header: "Det usagte",
         type: "right-content",
@@ -286,12 +333,7 @@ Hun har deltaget i udstillinger i ind- og udland og arbejder aktuelt med projekt
             <p v-html="item.text" :id="section.content.length === 1 ? `sektion-${section.id}-beskrivelse` : undefined"></p>
 
             <!-- Read more button -->
-            <button
-              v-if="'extra' in item && item.extra"
-              @click="openDialog(`${section.id}-${index}`)"
-              class="read-more-btn"
-              :aria-describedby="`dialog-${section.id}-${index}`"
-            >
+            <button v-if="'extra' in item && item.extra" @click="openDialog(`${section.id}-${index}`)" class="read-more-btn" :aria-describedby="`dialog-${section.id}-${index}`">
               Læs mere
             </button>
 
@@ -312,20 +354,9 @@ Hun har deltaget i udstillinger i ind- og udland og arbejder aktuelt med projekt
     </footer>
 
     <!-- Dialog Modal -->
-    <div
-      v-if="openDialogId"
-      class="dialog-backdrop"
-      @click="closeDialog"
-      role="dialog"
-      aria-modal="true"
-      :aria-labelledby="`dialog-title-${openDialogId}`"
-    >
+    <div v-if="openDialogId" class="dialog-backdrop" @click="closeDialog" role="dialog" aria-modal="true" :aria-labelledby="`dialog-title-${openDialogId}`">
       <div class="dialog-content" @click.stop>
-        <button
-          class="dialog-close"
-          @click="closeDialog"
-          aria-label="Luk dialog"
-        >
+        <button class="dialog-close" @click="closeDialog" aria-label="Luk dialog">
           ×
         </button>
 
