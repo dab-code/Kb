@@ -36,7 +36,7 @@ const content = [
       {
         header: null,
         type: "left-content",
-        text: `"Tråde af Tavshed" favner både det tekstile og det sproglige, det sagte og det usagte. Den antyder, at der findes forbindelser - tråde - mellem liv, krop og sprog, og at tavsheden i sig selv kan være ladet med betydning. <br><br>Samlingen består af værker, der undersøger kvindelivets rytmer, sprogets kraft og kroppens tavse fortællinger. Med symboler, tekstil og papir skabes en sanselig og konceptuel samling, hvor tråde - både det fysiske og metaforiske - binder værkerne sammen.`,
+        text: `"Tråde af Tavshed" favner både det tekstile og det sproglige, det sagte og det usagte. Den antyder, at der findes forbindelser - tråde - mellem liv, krop og sprog, og at tavsheden i sig selv kan være ladet med betydning. <br><br>Samlingen består af værker, der undersøger kvindelivets rytmer, sprogets kraft og kroppens tavse fortællinger. Med symboler, tekstil og papir skabes en sanselig og konceptuel samling, hvor tråde - både det fysiske og metaforiske - binder værkerne sammen.<br><br>Priser ved forespørgsel.`,
         list: null,
         image: {
           url: "/images/bh-1.jpeg",
@@ -204,7 +204,8 @@ Værket opstår i krydsfeltet mellem tekstil, skulptur og installation, og under
         type: "full-left",
         text: null,
         list: [
-          '2011 Forårsudstilling “Kunsten på første” i AKKC, Aalborg '
+          '2011 Forårsudstilling “Kunsten på første” i AKKC, Aalborg',
+          '2025 Censurerede udstilling på Dronninglund Kunstcenter'
         ],
         image: null
       },
@@ -215,9 +216,10 @@ Værket opstår i krydsfeltet mellem tekstil, skulptur og installation, og under
         list: [
           '2025 gruppeudstilling m. Lærke Bagger, Arken museum for samtidskunst',
           '2016 Det gamle rådhus, Aalborg',
+          '2011 Forårsudstilling “Kunsten på første” i AKKC, Aalborg ',
           '2010 Galleri Lykkegaard, Tversted',
-          'Galleri Århus',
-          'Bunderup ødekirke',
+          '2010 Galleri Århus',
+          '2010 Bunderup ødekirke',
           '2010 Knivholt hovedgaard, Frederikshavn',
           '2009 Kunst på Rådhuspladsen København',
           'Galleri Provence, Vadum',
@@ -242,7 +244,17 @@ Værket opstår i krydsfeltet mellem tekstil, skulptur og installation, og under
           '2010-2011 uddannet kulturarrangør'
         ],
         image: null
-      }
+      },
+      {
+        header: "Netværk",
+        type: "full-left",
+        text: null,
+        list: [
+          'Dansk tekstillaug',
+          'Nordic Textile Art'
+        ],
+        image: null
+      },
     ]
   },
   {
@@ -401,12 +413,12 @@ h3,
 h4,
 h5,
 h6 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 p {
   line-height: 1.7;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 // Main container
@@ -417,11 +429,11 @@ p {
 
   // Header styles
   header {
-    margin: 3rem 0 4rem 0;
+    margin: 2rem 0 3rem 0;
     text-align: center;
 
     @include tablet {
-      margin: 4rem 0 5rem 0;
+      margin: 3rem 0 4rem 0;
     }
   }
 
@@ -458,11 +470,11 @@ p {
 
   section header {
     text-align: left;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     margin-bottom: 1rem;
 
     p {
-      margin-top: -1.5rem;
+      margin-top: -1rem;
     }
   }
 
@@ -513,7 +525,7 @@ p {
 
 // Navigation
 nav {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   text-align: center;
 
   ul {
@@ -562,16 +574,16 @@ nav {
   flex-direction: column;
   margin-left: 5%;
   max-width: 90%;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 
   @include tablet {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     margin-left: 10%;
     max-width: 80%;
   }
 
   @include desktop {
-    margin-bottom: 5rem;
+    margin-bottom: 2.5rem;
     margin-left: 15%;
     max-width: 70%;
   }
@@ -582,21 +594,21 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   position: relative;
 
   @include tablet {
-    margin-bottom: 4rem;
+    margin-bottom: 2.5rem;
   }
 
   @include desktop {
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
   }
 
   // Content styles
   .content {
     order: 2;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
 
     p {
       font-size: 0.9rem;
@@ -720,7 +732,7 @@ nav {
 
 // Footer
 footer.container {
-  margin: 4rem auto;
+  margin: 3rem auto 2rem auto;
   text-align: center;
   color: var(--text-color);
   opacity: 0.7;
